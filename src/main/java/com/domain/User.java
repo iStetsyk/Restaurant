@@ -47,6 +47,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "orderHistory")
-    private Set orderHistoryList = new HashSet();
+    @OneToMany(mappedBy = "user")
+    private Set<Order> orderHistoryList = new HashSet();
 }

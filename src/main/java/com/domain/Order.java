@@ -18,18 +18,17 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private Long id;
-
-    @Column(name = "Meals")
-    @OneToMany
-    private Set<OrderMealQuantity> meals = new HashSet<>();
 
     @Column(name = "orderDate")
     private LocalDateTime orderTime;
 
+    @OneToMany(mappedBy = "order")
+    private Set<OrderMealQuantity> entries = new HashSet<>();
 
-    private boolean isDeleted;
-
+    @ManyToOne
+    private User user;
 
 
 
