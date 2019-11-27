@@ -6,10 +6,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Getter @Setter
-@EqualsAndHashCode(of = "id")
-@ToString
-@NoArgsConstructor
+@Getter @Setter @EqualsAndHashCode(of = "id")
+@ToString  @NoArgsConstructor
 public abstract class BaseEntity {
 
     @Id
